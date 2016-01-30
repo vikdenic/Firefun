@@ -13,6 +13,7 @@ class MessagesViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     let ref = Firebase(url: "https://examples-k9i8infracvfyzgxk0t.firebaseio-demo.com/web/struct/join-example")
+    var group : NSDictionary!
     var groupKey : String!
     var messagesDict = [String : NSDictionary]()
     var groupMessages = [String : NSDictionary]()
@@ -39,11 +40,13 @@ class MessagesViewController: UIViewController {
     }
 
     func viewSetup() {
+        self.title = group.objectForKey("name") as? String
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
 }
 
-extension MessagesViewController: UITableViewDataSource {
+extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
+    //MARK - DataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messagesDict.count
     }
@@ -54,7 +57,20 @@ extension MessagesViewController: UITableViewDataSource {
         let key = Array(self.groupMessages.keys)[indexPath.row]
         let message = groupMessages[key]
         cell.textLabel?.text = message?.objectForKey("message") as? String
-        return cell
+        cell.detailTextLabel?.text = message?.objectForKey("user") as? String
 
+        return cell
+    }
+
+    //MARK - Delegate   
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let key = Array(self.groupMessages.keys)[indexPath.row]
+        let message = groupMessages[key]
+
+        let authorsName = message!.objectForKey("user") as? String
+        let timeStamp = message!.objectForKey("timestamp") as? NSTimeInterval
+        let date = NSDate(timeIntervalSince1970:timeStamp!)
+
+        UIAlertController.showAlert(authorsName, message: date.toLocalString(), viewController: self)
     }
 }

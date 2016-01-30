@@ -37,9 +37,11 @@ class ViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let messagesVC = segue.destinationViewController as! MessagesViewController
         
-        let key = Array(groupsDict.keys)[(tableView.indexPathForSelectedRow?.row)!]
-        let groupKey = key
+        let groupKey = Array(groupsDict.keys)[(tableView.indexPathForSelectedRow?.row)!]
+        let group = self.groupsDict[groupKey]
 
+
+        messagesVC.group = group
         messagesVC.groupKey = groupKey
     }
 }
