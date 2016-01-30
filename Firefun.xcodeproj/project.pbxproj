@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		326D12097E57645F0BAB1990 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CBB0414E8BAE1B75C94B8E1 /* Pods.framework */; };
 		933D44351C5D1B830016DBE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D44341C5D1B830016DBE3 /* AppDelegate.swift */; };
 		933D44371C5D1B830016DBE3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D44361C5D1B830016DBE3 /* ViewController.swift */; };
 		933D443A1C5D1B830016DBE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 933D44381C5D1B830016DBE3 /* Main.storyboard */; };
 		933D443C1C5D1B830016DBE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 933D443B1C5D1B830016DBE3 /* Assets.xcassets */; };
 		933D443F1C5D1B830016DBE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 933D443D1C5D1B830016DBE3 /* LaunchScreen.storyboard */; };
+		933D44471C5D2BB60016DBE3 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933D44461C5D2BB60016DBE3 /* MessagesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3CBB0414E8BAE1B75C94B8E1 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E0E36C44CEA1B7A459AC6BD /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8E7DA649362D81FEEF33597B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		933D44311C5D1B830016DBE3 /* Firefun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Firefun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		933D44341C5D1B830016DBE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		933D44361C5D1B830016DBE3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,7 @@
 		933D443B1C5D1B830016DBE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		933D443E1C5D1B830016DBE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		933D44401C5D1B830016DBE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		933D44461C5D2BB60016DBE3 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				326D12097E57645F0BAB1990 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BFE2BAF07C20030609E19C9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E7DA649362D81FEEF33597B /* Pods.debug.xcconfig */,
+				3E0E36C44CEA1B7A459AC6BD /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1278A1727B33A5BA65CBB8B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3CBB0414E8BAE1B75C94B8E1 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		933D44281C5D1B830016DBE3 = {
 			isa = PBXGroup;
 			children = (
 				933D44331C5D1B830016DBE3 /* Firefun */,
 				933D44321C5D1B830016DBE3 /* Products */,
+				0BFE2BAF07C20030609E19C9 /* Pods */,
+				1278A1727B33A5BA65CBB8B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +82,7 @@
 			children = (
 				933D44341C5D1B830016DBE3 /* AppDelegate.swift */,
 				933D44361C5D1B830016DBE3 /* ViewController.swift */,
+				933D44461C5D2BB60016DBE3 /* MessagesViewController.swift */,
 				933D44381C5D1B830016DBE3 /* Main.storyboard */,
 				933D443B1C5D1B830016DBE3 /* Assets.xcassets */,
 				933D443D1C5D1B830016DBE3 /* LaunchScreen.storyboard */,
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 933D44431C5D1B830016DBE3 /* Build configuration list for PBXNativeTarget "Firefun" */;
 			buildPhases = (
+				09074917BA02829315662422 /* Check Pods Manifest.lock */,
 				933D442D1C5D1B830016DBE3 /* Sources */,
 				933D442E1C5D1B830016DBE3 /* Frameworks */,
 				933D442F1C5D1B830016DBE3 /* Resources */,
+				57D88F5D0A78C0189E0D4CC4 /* Embed Pods Frameworks */,
+				DEA76D9D060475F1583A26A7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,11 +160,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		09074917BA02829315662422 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		57D88F5D0A78C0189E0D4CC4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEA76D9D060475F1583A26A7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		933D442D1C5D1B830016DBE3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				933D44471C5D2BB60016DBE3 /* MessagesViewController.swift in Sources */,
 				933D44371C5D1B830016DBE3 /* ViewController.swift in Sources */,
 				933D44351C5D1B830016DBE3 /* AppDelegate.swift in Sources */,
 			);
@@ -245,6 +324,7 @@
 		};
 		933D44441C5D1B830016DBE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E7DA649362D81FEEF33597B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Firefun/Info.plist;
@@ -256,6 +336,7 @@
 		};
 		933D44451C5D1B830016DBE3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E0E36C44CEA1B7A459AC6BD /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Firefun/Info.plist;
@@ -284,6 +365,7 @@
 				933D44451C5D1B830016DBE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
