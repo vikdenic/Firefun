@@ -170,7 +170,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Messages" id="co6-6P-d0q"/>
+                    <navigationItem key="navigationItem" title="Messages" id="co6-6P-d0q">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aFv-yf-pcy">
+                            <connections>
+                                <action selector="onAddTapped:" destination="6Nr-0v-QXe" id="2Vy-PZ-Xfh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="NiZ-ay-pxN" id="Mny-Xc-6kG"/>
                     </connections>

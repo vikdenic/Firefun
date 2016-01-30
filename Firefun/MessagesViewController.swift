@@ -17,6 +17,7 @@ class MessagesViewController: UIViewController {
     var groupKey : String!
     var messagesDict = [String : NSDictionary]()
     var groupMessages = [String : NSDictionary]()
+    var textfield : UITextField?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,12 +44,32 @@ class MessagesViewController: UIViewController {
         self.title = group.objectForKey("name") as? String
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
+    
+    @IBAction func onAddTapped(sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "New Message", message: nil, preferredStyle: .Alert)
+
+        alert.addTextFieldWithConfigurationHandler { (textfield) -> Void in
+            self.textfield = textfield
+        }
+
+        let sendAction = UIAlertAction(title: "Send", style: .Default) { (action) -> Void in
+
+            let data = ["message" : (self.textfield?.text)!, "timestamp" : NSDate().timeIntervalSince1970, "user" : "trey"]
+            self.ref.childByAppendingPath("messages").childByAppendingPath(self.groupKey).childByAutoId().setValue(data)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+
+        alert.addAction(sendAction)
+        alert.addAction(cancelAction)
+
+        presentViewController(alert, animated: true, completion: nil)
+    }
 }
 
 extension MessagesViewController: UITableViewDataSource, UITableViewDelegate {
     //MARK - DataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messagesDict.count
+        return groupMessages.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
